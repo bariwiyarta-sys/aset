@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --color-on-error: #ffffff;
+  --color-surface-bright: #f7f9fb;
+  --color-background: #f7f9fb;
+  --color-on-secondary-fixed-variant: #1e2fc3;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary-container: #607de8;
+  --color-surface-variant: #e0e3e5;
+  --color-on-surface: #191c1e;
+  --color-tertiary-fixed: #dde1ff;
+  --color-surface: #f7f9fb;
+  --color-inverse-on-surface: #eff1f3;
+  --color-on-background: #191c1e;
+  --color-surface-container: #eceef0;
+  --color-secondary-container: #5565f2;
+  --color-primary-fixed: #dde1ff;
+  --color-surface-container-low: #f2f4f6;
+  --color-error: #ba1a1a;
+  --color-on-secondary: #ffffff;
+  --color-on-primary-fixed-variant: #3a4471;
+  --color-on-primary: #ffffff;
+  --color-surface-container-high: #e6e8ea;
+  --color-on-secondary-container: #fffbff;
+  --color-on-secondary-fixed: #000865;
+  --color-primary-fixed-dim: #bac4f9;
+  --color-on-tertiary-fixed: #001552;
+  --color-secondary-fixed: #dfe0ff;
+  --color-primary-container: #0c1843;
+  --color-surface-dim: #d8dadc;
+  --color-secondary-fixed-dim: #bdc2ff;
+  --color-outline: #767680;
+  --color-surface-tint: #525c8a;
+  --color-tertiary: #000000;
+  --color-on-primary-container: #7781b2;
+  --color-secondary: #3a49d8;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #001552;
+  --color-primary: #000000;
+  --color-inverse-surface: #2d3133;
+  --color-on-tertiary-fixed-variant: #193ca7;
+  --color-on-error-container: #93000a;
+  --color-on-surface-variant: #45464f;
+  --color-outline-variant: #c6c5d0;
+  --color-on-primary-fixed: #0c1843;
+  --color-tertiary-fixed-dim: #b7c4ff;
+  --color-inverse-primary: #bac4f9;
+  --color-error-container: #ffdad6;
+  --color-surface-container-highest: #e0e3e5;
+
+  --radius-DEFAULT: 0.25rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  --spacing-gutter: 1rem;
+  --spacing-margin-lg: 2rem;
+  --spacing-gutter-lg: 1.5rem;
+  --spacing-space-2xl: 2rem;
+  --spacing-space-xl: 1.5rem;
+  --spacing-space-sm: 0.5rem;
+  --spacing-space-2xs: 0.125rem;
+  --spacing-space-md: 0.75rem;
+  --spacing-margin-md: 1.5rem;
+  --spacing-space-xs: 0.25rem;
+  --spacing-margin: 1rem;
+  --spacing-space-lg: 1rem;
+
+  --font-title-md: Inter;
+  --font-display-lg-mobile: "Plus Jakarta Sans";
+  --font-label-md: Inter;
+  --font-headline-md: "Plus Jakarta Sans";
+  --font-body-sm: Inter;
+  --font-headline-lg-mobile: "Plus Jakarta Sans";
+  --font-code-sm: Inter;
+  --font-label-sm: Inter;
+  --font-body-md: Inter;
+  --font-headline-sm: "Plus Jakarta Sans";
+  --font-headline-lg: "Plus Jakarta Sans";
+  --font-display-lg: "Plus Jakarta Sans";
+  --font-body-lg: Inter;
+
+  --text-title-md: 15px;
+  --text-title-md--line-height: 22px;
+  --text-title-md--font-weight: 600;
+
+  --text-display-lg-mobile: 28px;
+  --text-display-lg-mobile--line-height: 36px;
+  --text-display-lg-mobile--font-weight: 700;
+
+  --text-label-md: 12px;
+  --text-label-md--line-height: 16px;
+  --text-label-md--font-weight: 600;
+
+  --text-headline-md: 20px;
+  --text-headline-md--line-height: 28px;
+  --text-headline-md--font-weight: 600;
+
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 18px;
+  --text-body-sm--font-weight: 400;
+
+  --text-headline-lg-mobile: 22px;
+  --text-headline-lg-mobile--line-height: 28px;
+  --text-headline-lg-mobile--font-weight: 600;
+
+  --text-code-sm: 12px;
+  --text-code-sm--line-height: 16px;
+  --text-code-sm--font-weight: 500;
+
+  --text-label-sm: 11px;
+  --text-label-sm--line-height: 14px;
+  --text-label-sm--font-weight: 600;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 20px;
+  --text-body-md--font-weight: 400;
+
+  --text-headline-sm: 16px;
+  --text-headline-sm--line-height: 24px;
+  --text-headline-sm--font-weight: 600;
+
+  --text-headline-lg: 28px;
+  --text-headline-lg--line-height: 36px;
+  --text-headline-lg--font-weight: 600;
+
+  --text-display-lg: 36px;
+  --text-display-lg--line-height: 44px;
+  --text-display-lg--font-weight: 700;
+
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 24px;
+  --text-body-lg--font-weight: 400;
+}
+
+@layer base {
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    overscroll-behavior: none;
+  }
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
