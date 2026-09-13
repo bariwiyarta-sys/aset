@@ -1,15 +1,15 @@
 import { useState } from 'react'
 
 const menuItems = [
-  { icon: 'dashboard', label: 'Dashboard Eksekutif', path: 'dashboard-eksekutif', active: true },
-  { icon: 'inventory_2', label: 'Inventaris & Katalog', path: 'inventaris-katalog-aset', active: false },
+  { icon: 'dashboard', label: 'Dashboard Eksekutif', path: 'dashboard-eksekutif', active: false },
+  { icon: 'inventory_2', label: 'Inventaris & Katalog', path: 'inventaris-katalog-aset', active: true },
   { icon: 'build_circle', label: 'Pemeliharaan & Tiket', path: 'pemeliharaan-tiket', active: false },
   { icon: 'fact_check', label: 'Peminjaman & Approval', path: 'peminjaman-approval', active: false },
   { icon: 'monitoring', label: 'Depresiasi & Finansial', path: 'depresiasi-keuangan', active: false },
   { icon: 'history_edu', label: 'Audit & Log Aktivitas', path: 'audit-log-aktivitas', active: false },
 ]
 
-export default function Sidebar({ open, onClose }) {
+export default function Sidebar({ open, onClose, currentPath, onNavigate }) {
   return (
     <>
       {open && (
@@ -41,9 +41,13 @@ export default function Sidebar({ open, onClose }) {
                 <a
                   key={item.path}
                   href="#"
-                  aria-current={item.active ? 'page' : undefined}
-                  onClick={(e) => { e.preventDefault(); onClose?.() }}
-                  className="flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all font-body-sm text-body-sm text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary"
+                  aria-current={item.active || currentPath === item.path ? 'page' : undefined}
+                  onClick={(e) => { e.preventDefault(); onNavigate(item.path); onClose?.() }}
+                  className={`flex items-center gap-space-md px-space-md py-space-sm rounded-lg transition-all font-body-sm text-body-sm ${
+                    currentPath === item.path
+                      ? 'bg-secondary text-on-secondary shadow-[0_0_12px_rgba(85,101,242,0.35)] font-semibold'
+                      : 'text-on-primary-container hover:bg-surface-container-highest/10 hover:text-on-primary'
+                  }`}
                 >
                   <span className="material-symbols-outlined text-[20px] shrink-0">{item.icon}</span>
                   <span className="truncate">{item.label}</span>
